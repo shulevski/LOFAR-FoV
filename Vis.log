@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/opt/lofarvis/userVis/vis.py", line 6, in <module>
-    from lofar.sas.otdb.OTDBBusListener import OTDBBusListener
-ImportError: No module named lofar.sas.otdb.OTDBBusListener
