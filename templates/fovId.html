@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="utf-8" content="chrome=1, IE=edge" http-equiv="X-UA-Compatible">
+		<title>LOFAR FoV Vis</title>
+		<script type="text/javascript" src="http://www.worldwidetelescope.org/scripts/wwtsdk.aspx"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="/uvis{{ url_for('static', filename='scripts/wwtGuiId.js') }}"></script>
+	 </head>
+	 <body onload="setUpId()" bgcolor="black">
+		<div style="color:gray;width:950px;margin-left:400px">
+			<h2>
+				LOFAR FoV
+			</h2>
+			<h2>
+				<span id="project" align="left"></span>
+			</h2>
+			<input hidden id="timestamp" type="text"/>
+		</div>
+		<!--span>
+			<form action="/fov/id/" method="post">
+				<label for="sasId">SAS Id</label>
+				<input id="sasId" name="sasId" type="text" {% if form != null %}value = "{{ form['sasId']|safe }}"{% endif %}/>
+				<input type="button" value="Show"/>
+			</form>
+		</span-->
+		<span style="color:gray" id="info"></span>&nbsp;&nbsp;
+		<span><font color="gray">Background:</font>
+			<select id='background' onchange='changeBackground()'>
+				<option value='Fermi'>Fermi</option>
+				<option value='ROSAT'>ROSAT</option>
+				<option value='DSS'>DSS</option>
+				<option value='SDSS'>SDSS</option>
+				<option value='WISE'>WISE</option>
+				<option value='Planck'>Planck</option>
+				<option value='VLSS'>VLSS</option>
+				<option value='WENSS' selected>WENSS</option>
+				<option value='FIRST'>FIRST</option>
+				<option value='NVSS'>NVSS</option>
+				<option value='HI'>HI</option>
+			</select>
+		</span>
+		<span>
+			<font color="gray">&nbsp;&nbsp;Show constelation lines</font><input id="Figures" type="checkbox" checked="checked" onclick="toggleSetting('ShowFigures');"/>
+		</span>
+		<div id="WorldWideTelescopeControlHost">
+		<div id="WWTCanvas" style="width:1600px;height:860px;"></div>
+	</body>
+</html>

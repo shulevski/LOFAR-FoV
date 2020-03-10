@@ -1,0 +1,1 @@
+python /opt/lofarvis/userVis/vis.py  &> /opt/lofarvis/userVis/Vis.log & 
